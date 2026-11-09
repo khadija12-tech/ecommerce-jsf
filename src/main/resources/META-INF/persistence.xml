@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence">
+  <persistence-unit name="ecommercePU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+
+    <class>com.ecommerce.model.Internaute</class>
+    <class>com.ecommerce.model.Vitrine</class>
+    <class>com.ecommerce.model.Produit</class>
+    <class>com.ecommerce.model.Panier</class>
+    <class>com.ecommerce.model.LignePanier</class>
+
+    <properties>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.url"
+        value="jdbc:mysql://localhost:3306/ecommerce_db?createDatabaseIfNotExist=true&amp;useSSL=false&amp;serverTimezone=UTC&amp;allowPublicKeyRetrieval=true"/>
+      <property name="javax.persistence.jdbc.user" value="dev"/>
+      <property name="javax.persistence.jdbc.password" value="dev123"/>
+
+      <property name="eclipselink.ddl-generation" value="create-tables"/>
+      <property name="eclipselink.ddl-generation.output-mode" value="database"/>
+      <property name="eclipselink.logging.level" value="INFO"/>
+    </properties>
+  </persistence-unit>
+</persistence>

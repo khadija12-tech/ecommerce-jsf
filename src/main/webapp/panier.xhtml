@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head><title>Panier</title></h:head>
+<h:body>
+  <h2>Mon panier</h2>
+  <h:messages/>
+  <h:form>
+    <h:dataTable value="#{panierBean.panier.lignes}" var="l" border="1" cellpadding="5">
+      <h:column><f:facet name="header">Produit</f:facet>#{l.produit.nom}</h:column>
+      <h:column><f:facet name="header">Prix</f:facet>#{l.produit.prix} MAD</h:column>
+      <h:column><f:facet name="header">Quantité</f:facet>#{l.quantite}</h:column>
+      <h:column><f:facet name="header">Sous-total</f:facet>#{l.sousTotal} MAD</h:column>
+      <h:column><h:commandButton value="Retirer" action="#{panierBean.retirer(l)}"/></h:column>
+    </h:dataTable>
+    <h3>Total : #{panierBean.panier.total} MAD</h3>
+    <h:commandButton value="Valider la commande" action="#{panierBean.valider}"/>
+    <h:link value="Continuer mes achats" outcome="produits"/>
+  </h:form>
+</h:body>
+</html>

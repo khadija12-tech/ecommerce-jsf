@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head><title>Connexion</title></h:head>
+<h:body>
+  <h2>Connexion</h2>
+  <h:messages/>
+  <h:form>
+    <h:panelGrid columns="2">
+      <h:outputLabel value="Email"/>
+      <h:inputText value="#{internauteBean.email}"/>
+      <h:outputLabel value="Mot de passe"/>
+      <h:inputSecret value="#{internauteBean.motDePasse}"/>
+    </h:panelGrid>
+    <h:commandButton value="Se connecter" action="#{internauteBean.connecter}"/>
+    <h:link value="Retour" outcome="produits"/>
+  </h:form>
+</h:body>
+</html>
